@@ -1,0 +1,38 @@
+<header class="top-fixed">
+    <div class="row">
+        <ul class="nav">
+            <li style="width: 10%;justify-content: center;">EasyChits</li>
+            <li class="nav-item"><a routerLink="home">DASHBOARD</a></li>
+            <li class="nav-item">CHIT</li>
+            <li class="nav-item"><a routerLink="loans">LOANS</a></li>
+            <li class="nav-item">TRANSACTIONS</li>
+            <li class="nav-item">REPORTS</li>
+            <li style="width: 35%;"></li>
+            <li class="nav-item">notification<span class="badge badge-light">9</span></li>
+            <li class="nav-item"><a href="/">logout</a></li>
+        </ul>
+    </div>
+</header>
+<aside>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+      </div>
+</aside>
+<script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
+<main>
+    <div id="main-content">
+        <router-outlet></router-outlet>
+    </div>
+</main>

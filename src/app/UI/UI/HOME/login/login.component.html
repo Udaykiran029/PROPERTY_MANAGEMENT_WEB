@@ -1,0 +1,38 @@
+<div class="main">
+  <form [formGroup]="loginForm">
+
+      <div class="container">
+          <div class="col-md-12">
+              <div class="row">
+                  <div class="col-md-6">
+                      image
+
+                  </div>
+                  <div class="col-md-6">
+                      <!-- <form> -->
+                          <div class="log">
+                              <h3><strong>Sign in</strong></h3>
+                              <div class="form-group">
+                                  <label for="username" class="required-field">User name:</label>
+                                  <input type="text" id="username" formControlName="username" class="form-control"
+                                      title="User name" minlength="3">
+                                  
+                              </div>
+                              <div class="form-group mt-3">
+                                  <label for="lname">password:</label>
+                                  <input type="password" id="password" formControlName="password" class="form-control"
+                                      title="password" maxlength="6" name="value">
+                                  
+                              </div>
+                              <div class="mt-4">
+                                  <button type="button" id="r" (click)="register('register')">Register</button>
+                                  <button type="button" id="l" (click)="login()">login</button>
+                              </div>
+                          </div>
+                      <!-- </form> -->
+                  </div>
+              </div>
+          </div>
+      </div>
+  </form>
+</div>

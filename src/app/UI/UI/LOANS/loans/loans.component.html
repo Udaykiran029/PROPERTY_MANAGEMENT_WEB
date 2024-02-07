@@ -1,0 +1,69 @@
+<h4>Loans</h4>
+<button class="btn btn-primary" (click)="printorpdf()">Apply Loan</button>
+<form [formGroup]="loanForm" >
+    <div class="col-md-12 col-xl-12">
+        <label>Personal Details</label>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>First Name:</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Last Name:</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>contact:</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Date of birth:</label>
+                    <input type="text" class="form-control" bsDatepicker [bsConfig]="bsdopConfig" formControlName="fromdate">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Present Address:</label>
+                    <textarea type="text" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Permanent Address:</label>
+                    <textarea type="text" class="form-control"></textarea>
+                </div>
+            </div>
+        </div>
+        <label>Loan Details</label>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Amount:</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>ngselect:</label>
+                    <ng-select [items]="brancheslst" 
+                                bindLabel="branch_name" 
+                                bindValue="branchId" 
+                                id="branchid"
+                                class="form-control"
+                                
+                                [clearOnBackspace]="true"
+                                [clearable]="true"
+                                placeholder="Select">
+                    </ng-select>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

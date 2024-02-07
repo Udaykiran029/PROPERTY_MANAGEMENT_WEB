@@ -1,0 +1,119 @@
+/* You can add global styles to this file, and also import other style files */
+/* * {
+    font-family: sans-serif;
+} */
+*{
+    font-style: sans-serif;
+}
+.form-control{
+    width:50%;
+}
+.bord {
+    border: 1px solid;
+}
+
+.mt-0 {
+    margin-top: 0rem;
+
+}
+
+.mt-1 {
+    margin-top: 1rem;
+
+}
+
+.mt-2 {
+    margin-top: 2rem;
+
+}
+
+.mt-3 {
+    margin-top: 3rem;
+
+}
+
+.mt-4 {
+    margin-top: 4rem;
+
+}
+
+.mt-5 {
+    margin-top: 80px;
+
+}
+
+.section-1 {
+    border-radius: 1px solid;
+    border: 1px solid;
+    background: #f2efeb;
+    border-radius: 3px;
+    height: 34rem;
+
+}
+
+.vl {
+    border-right: 1px solid;
+    height: 10rem;
+    display: flex;
+
+    height: 34rem;
+}
+
+.pad-0 {
+    padding: 0rem;
+}
+
+.pad-1 {
+    padding: 1rem;
+}
+
+.pad-2 {
+    padding: 2rem;
+}
+
+.pl-4 {
+    padding-left: 6px;
+}
+
+.plr {
+    padding-left: 6px;
+    padding-right: 20px;
+}
+
+.stickyy {
+    position: fixed;
+}
+
+/* .row>.formGroup {
+    height: 20px;
+
+} */
+.display-b {
+    display: block !important;
+}
+
+/* .dfs {
+    display: flex;
+    justify-content: start;
+}
+
+.dfe {
+    display: flex;
+    justify-content: end;
+} */
+
+.section-content {
+    margin: 20px;
+    display: flex;
+    height: 500px;
+    width: auto;
+    background: #ffffff;
+    border: 1px #7d7676e6;
+    border-radius: 4px !important;
+    box-shadow: #c89e67;
+    outline-style: #8f8d8d;
+}
+
+.m-all {
+    margin: 20px;
+}
