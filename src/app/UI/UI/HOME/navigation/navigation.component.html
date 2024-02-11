@@ -2,11 +2,11 @@
     <div class="row">
         <ul class="nav">
             <li style="width: 10%;justify-content: center;">EasyChits</li>
-            <li class="nav-item"><a routerLink="home">DASHBOARD</a></li>
-            <li class="nav-item">CHIT</li>
-            <li class="nav-item"><a routerLink="loans">LOANS</a></li>
-            <li class="nav-item">TRANSACTIONS</li>
-            <li class="nav-item">REPORTS</li>
+            <li class="nav-item"><a id="1" routerLink="Dashboard">DASHBOARD</a></li>
+            <li class="nav-item"><a id="2" routerLink="chit">CHIT</a></li>
+            <li class="nav-item"><a id="3" routerLink="loans">LOANS</a></li>
+            <li class="nav-item"><a id="4" routerLink="transactions">TRANSACTIONS</a></li>
+            <li class="nav-item"><a id="5" routerLink="reports">REPORTS</a></li>
             <li style="width: 35%;"></li>
             <li class="nav-item">notification<span class="badge badge-light">9</span></li>
             <li class="nav-item"><a href="/">logout</a></li>
@@ -15,24 +15,28 @@
 </header>
 <aside>
     <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">About</a>
+        <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+        <!-- <a href="#">About</a>
         <a href="#">Services</a>
         <a href="#">Clients</a>
-        <a href="#">Contact</a>
+        <a href="#">Contact</a> -->
+        <!-- <div *ngFor="let links of RouteLinkNames;">
+            <a href="#">{{links}}</a>
+        </div> -->
       </div>
 </aside>
-<script>
+<!-- <script>
     function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
     }
     
     function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("mySidenav").style.width = "0px";
     }
-    </script>
+    </script> -->
 <main>
     <div id="main-content">
+        <!-- <button (click)="openNav()">&#9776;</button> -->
         <router-outlet></router-outlet>
     </div>
 </main>

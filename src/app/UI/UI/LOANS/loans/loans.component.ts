@@ -29,9 +29,9 @@ export class LoansComponent implements OnInit {
 
   ngOnInit(): void {
     this.FormDetails();
-    this.commonservice.gettdata().subscribe(res=>{
-      this.brancheslst=res;
-    })
+    // this.commonservice.gettdata().subscribe(res=>{
+    //   this.brancheslst=res;
+    // })
   }
   FormDetails(){
     debugger

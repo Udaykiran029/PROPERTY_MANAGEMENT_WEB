@@ -11,7 +11,15 @@ import { environment } from 'src/environments/environment';
 })
 export class CommonService {
   msgtimeout = 1500;
-  constructor(private http:HttpClient,private toastr:ToastrService) { }
+  constructor(private http:HttpClient,private toastr:ToastrService) {
+    const RoutesNames={
+      Home:{id:1,mainmodule:'Home',submodule:{id:1,link1:'Home'}},
+      chit:{id:2,mainmodule:'chit',submodule:{id:2,link1:'chit-link1',link2:'chit-link2'}},
+      loans:{id:3,mainmodule:'loans',submodule:{id:3,link1:'loan-link1',link2:'loan-link2'}},
+      transactions:{id:4,mainmodule:'transactions',submodule:{id:4,link1:'transactions-link1',link2:'transactions-link2'}}
+    }
+    console.log('Routes Names',RoutesNames);
+  }
 
   // getAPI(){
   //   return this.http.get("");

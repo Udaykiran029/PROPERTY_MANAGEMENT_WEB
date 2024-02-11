@@ -9,10 +9,17 @@ import { Router } from '@angular/router';
 export class NavigationComponent implements OnInit {
 
   constructor(private router:Router) { 
-    this.router.navigate(['/login']);
+    this.router.navigate(['navigation/Dashboard']);
   }
 
   ngOnInit(): void {
   }
-
+  closeNav(){
+    debugger
+    document.getElementById("mySidenav").style.width = "0px";
+  }
+  openNav() {
+    debugger
+    document.getElementById("mySidenav").style.width = "250px";
+  }
 }

@@ -18,9 +18,10 @@ export class LoginComponent implements OnInit {
     // this.commonservice.gettdata().subscribe(res=>{
     //   console.log('res',res);
     // })
-    this.commonservice.getsupermarketdetails().subscribe(res=>{
-      console.log('ress',res)
-    })
+    // this.commonservice.getsupermarketdetails().subscribe(res=>{
+    //   console.log('ress',res)
+    // })
+    // this.commonservice
    }
 
   ngOnInit(){
@@ -45,7 +46,8 @@ export class LoginComponent implements OnInit {
     debugger;
     let isValid = true;
     console.log('login')
-    this.router.navigate(['navigation'])
+    this.router.navigate(['navigation/Dashboard']);
+    // this.router.navigate(['navigation'])
 }
 getdata(): Observable<any> {
   debugger

@@ -12,12 +12,14 @@ import { NavigationComponent } from 'src/app/UI/UI/HOME/navigation/navigation.co
 import { LoansComponent } from 'src/app/UI/UI/LOANS/loans/loans.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DashboardComponent } from './UI/UI/HOME/dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NavigationComponent,
-    LoansComponent
+    LoansComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
