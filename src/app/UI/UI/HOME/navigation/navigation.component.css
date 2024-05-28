@@ -68,3 +68,31 @@ a {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
+  #mySidenav{
+    background: #c9c9c9;
+  }
+  ul>li{
+    padding: 2px;
+    width:20px
+  }
+  ul{
+    width: 85px;
+    padding: revert;
+  }
+  .main-content{
+    margin-left: 14rem;
+  }
+  .forms-menu{
+    font-size: medium;
+  }
+  .nav-item>a:hover{
+    background: aliceblue;
+    color: black;
+  }
+  .forms-menu>ul>li>a:hover{
+    background: azure;
+    color: black;
+  }
+  .side-nav-item{
+    
+  }

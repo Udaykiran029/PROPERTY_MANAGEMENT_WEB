@@ -26,7 +26,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(){
     this.FormDetails();
-  }
+    this.commonservice.showsuccessmsg('login successfully')
+    }
   FormDetails(){
     this.loginForm=this.fb.group({
       username:[''],

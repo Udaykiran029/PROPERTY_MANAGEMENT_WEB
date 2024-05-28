@@ -1,0 +1,43 @@
+<form [formGroup]="BlockCreation">
+    <div class="section-content">
+        <div class="row">
+            <h3>Block Creation</h3>
+            <div class="col-md-4 col-xl-4">
+                <div class="form-group">
+                    <label>pblockname</label>
+                    <input type="text" class="form-control" formControlName="pblockname" id="pblockname" title="Block" maxlength="100">
+                </div>
+            </div>
+            <div class="col-md-4 col-xl-4">
+                <div class="form-group">
+                    <label>Floors</label>
+                    <input type="text" class="form-control" formControlName="pNoofFloors" id="pNoofFloors" title="Floors" maxlength="100">
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-md-4 col-xl-4">
+                <div class="form-group">
+                    <label>Rooms</label>
+                    <input type="text" class="form-control" formControlName="pNoofRooms" id="pNoofRooms" title="Rooms" maxlength="100">
+                </div>
+            </div>
+            <div class="col-md-4 col-xl-4">
+                <button (click)="add()">Add</button>
+            </div>
+        </div>
+        <div class="col-md-4 col-xl-4">
+            <button (click)="SaveBlockandFloors()">Save</button>
+        </div>
+        </div>
+        <div class="row">
+            <ngx-datatable [rows]="">
+                <ngx-datatable-column name="Floor no" prop="pfloorid"></ngx-datatable-column>
+                <ngx-datatable-column name="Floor Name" prop="pfloorname"></ngx-datatable-column>
+                <ngx-datatable-column name="Block id" prop="pblock_id"></ngx-datatable-column>
+                <ngx-datatable-column name="No of Rooms" prop="pNoofRooms"></ngx-datatable-column>
+                <ngx-datatable-column name="Vacancy" prop="pisvacancy"></ngx-datatable-column>
+                <ngx-datatable-column name="Status" prop="statusid"></ngx-datatable-column>
+            </ngx-datatable>
+        </div>
+    </div>
+</form>

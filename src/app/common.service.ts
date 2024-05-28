@@ -191,6 +191,9 @@ getbranchdetails(){
   showErrorMessage(msg){
     this.toastr.error(msg, "Error", { timeOut: this.msgtimeout })
   }
+  showsuccessmsg(msg){
+    this.toastr.success(msg,'Done',{ timeOut: this.msgtimeout });
+  }
     getsupermarketdetails(){
       debugger
       try{
@@ -200,6 +203,49 @@ getbranchdetails(){
       catch(errormssg){
               this.showErrorMessage(errormssg);
             }
+      }
+      SaveBlockandFloors(data){
+        try{
+          return this._postAPI('/SaveBlockandFloors',data);
+        }catch(errormssg){
+              this.showErrorMessage(errormssg);
+            }
+      }
+      GetAllBlocks(){
+        try{
+          const params=new HttpParams();
+          return this.getAPI('/GetAllBlocks',params,'');
+        }
+        catch(errormssg)
+        {
+          this.showErrorMessage(errormssg);
+        }
+      }
+      GetFloorsByBlockId(pBlockId){
+        debugger
+        try{
+          // const params=new HttpParams().set('pBlockId',pBlockId);
+          // return this.getAPI('/GetFloorsByBlockId',params,'');
+          // console.log(params);
+          return this.getAPI('/GetFloorsByBlockId?pBlockId='+pBlockId,'','');
+        }
+        catch(errormssg)
+        {
+          this.showErrorMessage(errormssg);
+        }
+      }
+      GetAllRoomNumberByFloorid(blockid,floorid){
+        debugger
+        try{
+          // const params=new HttpParams().set('pBlockId',pBlockId);
+          // return this.getAPI('/GetFloorsByBlockId',params,'');
+          // console.log(params);
+          return this.getAPI('/GetAllRoomNumberByFloorid?blockid='+blockid+'&floorid='+floorid,'','');
+        }
+        catch(errormssg)
+        {
+          this.showErrorMessage(errormssg);
+        }
       }
 }
 // https://localhost:44358/api/Student/GetAllBranchesDetails

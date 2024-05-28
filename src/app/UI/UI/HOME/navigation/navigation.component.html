@@ -1,15 +1,16 @@
 <header class="top-fixed">
     <div class="row">
-        <ul class="nav">
-            <li style="width: 10%;justify-content: center;">EasyChits</li>
-            <li class="nav-item"><a id="1" routerLink="Dashboard">DASHBOARD</a></li>
-            <li class="nav-item"><a id="2" routerLink="chit">CHIT</a></li>
+        <!-- <li class="nav-item"><button (click)="openNav()"></button></li> -->
+        <ul class="nav" *ngFor="let module of menudata.moduleDTOList">
+            <!-- <li style="width: 10%;justify-content: center;" (click)="openNav()">open</li> -->
+        <li class="nav-item"><a id="{{module.pmoduleid}}" routerLink="{{module.pmodulenamehtml}}" (click)="openforms(module.pmoduleid)">{{module.pmodulename}}</a></li>
+            <!-- <li class="nav-item"><a id="2" routerLink="chit">CHIT</a></li>
             <li class="nav-item"><a id="3" routerLink="loans">LOANS</a></li>
             <li class="nav-item"><a id="4" routerLink="transactions">TRANSACTIONS</a></li>
-            <li class="nav-item"><a id="5" routerLink="reports">REPORTS</a></li>
-            <li style="width: 35%;"></li>
+            <li class="nav-item"><a id="5" routerLink="reports">REPORTS</a></li> -->
+            <!-- <li style="width: 35%;"></li>
             <li class="nav-item">notification<span class="badge badge-light">9</span></li>
-            <li class="nav-item"><a href="/">logout</a></li>
+            <li class="nav-item"><a href="/">logout</a></li> -->
         </ul>
     </div>
 </header>
@@ -20,9 +21,14 @@
         <a href="#">Services</a>
         <a href="#">Clients</a>
         <a href="#">Contact</a> -->
-        <!-- <div *ngFor="let links of RouteLinkNames;">
-            <a href="#">{{links}}</a>
-        </div> -->
+        <div class="forms-menu">
+            <!-- <ul *ngFor="let links of menudata.moduleDTOList;index as i"> -->
+            <!-- <li><a></a></li> -->
+            <ul *ngFor="let form of formcomponents" class="inner-forms-menu">
+                <li class="side-nav-item"><a id="{{form.pformid}}" routerLink="{{form.pformNamehtml}}">{{form.pformName}}</a></li>
+            </ul>
+                <!-- </ul> -->
+        </div>
       </div>
 </aside>
 <!-- <script>

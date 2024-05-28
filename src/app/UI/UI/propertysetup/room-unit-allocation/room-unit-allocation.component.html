@@ -1,0 +1,94 @@
+<form [formGroup]="RoomAllocation">
+    <div class="section-content">
+        <div class="row">
+            <!-- <div class="col-md-3 col-xl-3">
+                <div class="form-group">
+                    <label>Block</label>
+                    <select class="form-control" id="pblock" >
+                        <option *ngFor="let item of result" [value]="item.pblockname">{{item.pblockname}}</option>
+                    </select>
+                </div>
+            </div> -->
+            <div class="col-md-3 col-xl-3">
+                <div class="form-group">
+                    <label>Blocks</label>
+                    <ng-select [items]="result" formControlName="pBlock" id="pBlock"
+                     bindLabel="pblockname"
+                     bindValue="pblock_id" 
+                     class="form-control"
+                     dropdownPosition="bottom"
+                     placeholder=""
+                     (change)="blockChange($event)">
+                    </ng-select>
+                </div>
+            </div>
+            <div class="col-md-3 col-xl-3">
+                <div class="form-group">
+                    <label>Floors</label>
+                    <ng-select [items]="roomslst" formControlName="pFloors" id="pFloors"
+                     bindLabel="pfloorname"
+                     bindValue="pfloorid" 
+                     dropdownPosition="bottom"
+                     placeholder="Select"
+                     class="form-control"
+                     (change)="floorChange($event)">
+                    </ng-select>
+                </div>
+            </div>
+            <div class="col-md-3 col-xl-3">
+                <div class="form-group">
+                    <label>Rooms</label>
+                    <ng-select [items]="roooms" formControlName="pBlock" id=""
+                     bindLabel="pRoomNumber"
+                     bindValue="pRoomid" 
+                     dropdownPosition="bottom"
+                     class="form-control"
+                     placeholder="">
+                    </ng-select>
+                    <!-- pblockid
+                    pfloorid -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-xl-3">
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" class="form-control" placeholder="name" formControlName="pname">
+                </div>
+            </div>
+            <div class="col-md-3 col-xl-3">
+                <div class="form-group">
+                    <label>Contact no:</label>
+                    <input type="text" class="form-control" placeholder="name" formControlName="pcontactno">
+                </div>
+            </div>
+            <div class="col-md-3 col-xl-3">
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="text" class="form-control" placeholder="name" formControlName="pemail">
+                </div>
+            </div>
+        </div>
+    </div>
+    <button (click)="addtenantdetails()">Add</button>
+    <div class="row">
+        <ngx-datatable [rows]="roomtenantdetails" *ngIf="roomtenantdetails.length>0">
+            <ngx-datatable-column name="Name" prop="pname"></ngx-datatable-column>
+            <ngx-datatable-column name="Contact no" prop="pcontactno"></ngx-datatable-column>
+            <ngx-datatable-column name="Email" prop="pemail"></ngx-datatable-column>
+        </ngx-datatable>
+
+    </div>
+    <div class="row" style="margin-top:50px">
+        <ngx-datatable [rows]="roomslst">
+            <ngx-datatable-column name="Floor no" prop="pfloorid"></ngx-datatable-column>
+            <ngx-datatable-column name="Floor Name" prop="pfloorname"></ngx-datatable-column>
+            <ngx-datatable-column name="Block id" prop="pblock_id"></ngx-datatable-column>
+            <ngx-datatable-column name="No of Rooms" prop="pNoofRooms"></ngx-datatable-column>
+            <ngx-datatable-column name="Vacancy" prop="pisvacancy"></ngx-datatable-column>
+            <ngx-datatable-column name="Status" prop="statusid"></ngx-datatable-column>
+        </ngx-datatable>
+
+    </div>
+</form>
