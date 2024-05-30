@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CommonService } from 'src/app/common.service';
 
 @Component({
@@ -21,7 +22,7 @@ export class RoomUnitAllocationComponent implements OnInit {
     // pemail: "dfd",
     // pname: "sdfgssdfsd"}
   ];
-  constructor(private commonservice:CommonService,private fb:FormBuilder) { }
+  constructor(private commonservice:CommonService,private fb:FormBuilder,private router:Router) { }
 
   ngOnInit(): void {
     this.FormDetails();
@@ -72,5 +73,8 @@ export class RoomUnitAllocationComponent implements OnInit {
       console.log(this.roomtenantdetails);
     
 
+  }
+  viewRoomunitAllocation(){
+    this.router.navigate(['/navigation/propertySetup/RoomUnitAllocationView']);
   }
 }

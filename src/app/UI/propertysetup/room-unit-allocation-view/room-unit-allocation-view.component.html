@@ -1,0 +1,15 @@
+<form [formGroup]="RoomUnitAllocationView">
+    <div class="section-content">
+        <div class="row">
+            <div class="col-md-12 col-xl-12">
+                <div class="layout">
+                    <ul *ngFor="let item of itemslst;">
+                        <li [ngStyle]="{'background-color': item?.status ? 'red' : 'green' }">
+                            {{item.roomno}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

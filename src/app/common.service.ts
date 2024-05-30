@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AbstractControl } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Observable, catchError, map, mergeMap, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -246,6 +247,23 @@ getbranchdetails(){
         {
           this.showErrorMessage(errormssg);
         }
+      }
+      getValidationMessage(formcontrol: AbstractControl, errorkey: string, lablename: string, key: string, skipkeys: string): string {
+        debugger;
+        let errormessage: string;
+        if (errorkey == 'required') {
+          errormessage = lablename + ' ' + errorkey
+        }
+        else if (errorkey == 'email' || errorkey == 'pattern') {
+          errormessage = 'Enter the valid email'
+        }
+        else if (errorkey == 'minlength') {
+          errormessage = 'Enter the data with minimum length'
+        }
+        else if (errorkey == 'maxlength') {
+          errormessage = 'Enter the data within the maximum length'
+        }
+        return errormessage;
       }
 }
 // https://localhost:44358/api/Student/GetAllBranchesDetails

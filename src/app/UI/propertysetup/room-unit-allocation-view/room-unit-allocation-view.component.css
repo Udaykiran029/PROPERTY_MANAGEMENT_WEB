@@ -1,0 +1,15 @@
+.layout>ul{
+    list-style: none;
+    width: 100px;
+    border: 1px solid;
+    padding: 28px;
+}
+.layout{
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    justify-content: space-evenly;
+}
+ul{
+    display: flex;
+    justify-content: center;
+}

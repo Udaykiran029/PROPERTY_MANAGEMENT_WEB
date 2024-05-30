@@ -1,6 +1,11 @@
 <form [formGroup]="RoomAllocation">
     <div class="section-content">
         <div class="row">
+            <div class="d-flex justify-content-end">
+                <a style="cursor: pointer;color: blue;" (click)="viewRoomunitAllocation()">View</a>
+            </div>
+        </div>
+        <div class="row">
             <!-- <div class="col-md-3 col-xl-3">
                 <div class="form-group">
                     <label>Block</label>
@@ -71,16 +76,23 @@
             </div>
         </div>
     </div>
-    <button (click)="addtenantdetails()">Add</button>
+    <div class="section-content">
     <div class="row">
-        <ngx-datatable [rows]="roomtenantdetails" *ngIf="roomtenantdetails.length>0">
-            <ngx-datatable-column name="Name" prop="pname"></ngx-datatable-column>
-            <ngx-datatable-column name="Contact no" prop="pcontactno"></ngx-datatable-column>
-            <ngx-datatable-column name="Email" prop="pemail"></ngx-datatable-column>
-        </ngx-datatable>
-
+        <div class="d-flex justify-content-end">
+            <button (click)="addtenantdetails()" class="btn btn-primary">Add</button>
+        </div>
     </div>
-    <div class="row" style="margin-top:50px">
+    <div class="row">
+        <div class="col-md-12 col-xl-12">
+            <ngx-datatable [rows]="roomtenantdetails" *ngIf="roomtenantdetails.length>0">
+                <ngx-datatable-column name="Name" prop="pname"></ngx-datatable-column>
+                <ngx-datatable-column name="Contact no" prop="pcontactno"></ngx-datatable-column>
+                <ngx-datatable-column name="Email" prop="pemail"></ngx-datatable-column>
+            </ngx-datatable>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-12 col-xl-12">
         <ngx-datatable [rows]="roomslst">
             <ngx-datatable-column name="Floor no" prop="pfloorid"></ngx-datatable-column>
             <ngx-datatable-column name="Floor Name" prop="pfloorname"></ngx-datatable-column>
@@ -89,6 +101,7 @@
             <ngx-datatable-column name="Vacancy" prop="pisvacancy"></ngx-datatable-column>
             <ngx-datatable-column name="Status" prop="statusid"></ngx-datatable-column>
         </ngx-datatable>
-
     </div>
+    </div>
+</div>
 </form>
