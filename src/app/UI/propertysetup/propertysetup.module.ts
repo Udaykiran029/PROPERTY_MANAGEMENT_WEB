@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { ShareModule } from '../COMMON/share.module';
 import { BlockBuildingCreationComponent } from './block-building-creation/block-building-creation.component';
 import { FloorPlansComponent } from './floor-plans/floor-plans.component';
 import { PROPERTYSETUPRoutingModule } from './propertysetup-routing.module';
@@ -25,7 +26,8 @@ import { RoomUnitAllocationComponent } from './room-unit-allocation/room-unit-al
     PROPERTYSETUPRoutingModule,
     ReactiveFormsModule,
     NgSelectModule,
-    NgxDatatableModule
+    NgxDatatableModule,
+    ShareModule
   ]
 })
 export class PROPERTYSETUPModule { }

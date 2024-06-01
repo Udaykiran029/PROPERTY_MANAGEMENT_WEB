@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./validation-message.component.css']
 })
 export class ValidationMessageComponent implements OnInit {
-  @Input() message: string;
+  @Input() messgae: string;
   constructor() { }
 
   ngOnInit(): void {

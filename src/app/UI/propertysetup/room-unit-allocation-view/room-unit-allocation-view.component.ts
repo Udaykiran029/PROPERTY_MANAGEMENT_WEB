@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CommonService } from 'src/app/common.service';
 
 @Component({
   selector: 'app-room-unit-allocation-view',
@@ -9,7 +11,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class RoomUnitAllocationViewComponent implements OnInit {
   RoomUnitAllocationView:FormGroup;
   itemslst:any=[];
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder,private router:Router,private commonservice:CommonService) { }
 
   ngOnInit(): void {
     this.FormDetails();
@@ -37,5 +39,14 @@ export class RoomUnitAllocationViewComponent implements OnInit {
     this.RoomUnitAllocationView=this.fb.group({
       fromdate:[new Date()]
     });
+  }
+  allotroom($event,room,status){
+    debugger;
+    console.log($event,room,status);
+    if (status){
+      this.router.navigate(['navigation/propertySetup/RoomUnitAllocation']);
+    }else{
+      this.commonservice.showsWarningMessage('Already Room Allocated!!');
+    }
   }
 }

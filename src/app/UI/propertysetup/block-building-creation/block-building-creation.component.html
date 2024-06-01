@@ -4,14 +4,18 @@
             <h3>Block Creation</h3>
             <div class="col-md-4 col-xl-4">
                 <div class="form-group">
-                    <label>pblockname</label>
-                    <input type="text" class="form-control" formControlName="pblockname" id="pblockname" title="Block" maxlength="100">
+                    <label>blockname</label>
+                    <input type="text" class="form-control" formControlName="pblockname" id="pblockname" title="Block" maxlength="100"
+                    [ngClass]="{'is-invalid':BlockCreationValidation?.pblockname}">
+                    <app-validation-message [messgae]="BlockCreationValidation?.pblockname"></app-validation-message>
                 </div>
             </div>
             <div class="col-md-4 col-xl-4">
                 <div class="form-group">
                     <label>Floors</label>
-                    <input type="text" class="form-control" formControlName="pNoofFloors" id="pNoofFloors" title="Floors" maxlength="100">
+                    <input type="text" class="form-control" formControlName="pNoofFloors" id="pNoofFloors" title="Floors" maxlength="100"
+                    [ngClass]="{'is-invalid':BlockCreationValidation?.pNoofFloors}">
+                    <app-validation-message [messgae]="BlockCreationValidation?.pNoofFloors"></app-validation-message>
                 </div>
             </div>
             <div class="row">

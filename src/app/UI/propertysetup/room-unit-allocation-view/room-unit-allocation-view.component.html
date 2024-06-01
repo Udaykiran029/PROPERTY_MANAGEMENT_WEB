@@ -3,11 +3,13 @@
         <div class="row">
             <div class="col-md-12 col-xl-12">
                 <div class="layout">
-                    <ul *ngFor="let item of itemslst;">
-                        <li [ngStyle]="{'background-color': item?.status ? 'red' : 'green' }">
-                            {{item.roomno}}
-                        </li>
-                    </ul>
+                    <div *ngFor="let item of itemslst;" style="cursor: pointer;">
+                        <ul class="roomitems" [ngStyle]="{'background-color': item?.status ? '#D8F2E2' : '#FFD1D1' }">
+                            <li (click)="allotroom($event,item.roomno,item.status)">
+                                {{item.roomno}}
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

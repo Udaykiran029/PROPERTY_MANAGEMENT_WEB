@@ -1,13 +1,16 @@
-.layout>ul{
+/* .layout>ul{ */
+.roomitems{
     list-style: none;
     width: 100px;
     border: 1px solid;
-    padding: 28px;
+    /*padding: 28px;*/
+    height: 100px;
 }
 .layout{
     display: grid;
     grid-template-columns: repeat(8,1fr);
     justify-content: space-evenly;
+    gap:50px;
 }
 ul{
     display: flex;

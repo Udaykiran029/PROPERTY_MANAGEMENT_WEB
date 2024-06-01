@@ -195,6 +195,9 @@ getbranchdetails(){
   showsuccessmsg(msg){
     this.toastr.success(msg,'Done',{ timeOut: this.msgtimeout });
   }
+  showsWarningMessage(msg){
+    this.toastr.warning(msg,'Warning',{ timeOut: this.msgtimeout });
+  }
     getsupermarketdetails(){
       debugger
       try{
@@ -238,10 +241,11 @@ getbranchdetails(){
       GetAllRoomNumberByFloorid(blockid,floorid){
         debugger
         try{
-          // const params=new HttpParams().set('pBlockId',pBlockId);
-          // return this.getAPI('/GetFloorsByBlockId',params,'');
+          const params=new HttpParams().set('blockid',blockid).set('floorid',floorid);
+          return this.getAPI('/GetFloorsByBlockId',params,'');
           // console.log(params);
-          return this.getAPI('/GetAllRoomNumberByFloorid?blockid='+blockid+'&floorid='+floorid,'','');
+          // return this.getAPI('/GetAllRoomNumberByFloorid?blockid='+blockid+'&floorid='+floorid,'','');
+          // return this.getAPI('/GetAllRoomNumberByFloorid?blockid='+blockid+'&floorid='+floorid,'','');
         }
         catch(errormssg)
         {
@@ -265,5 +269,17 @@ getbranchdetails(){
         }
         return errormessage;
       }
+      // callGetAPI(apiPath, params, parameterStatus) {
+      //   debugger
+      //   let urldata = environment.apiUrl;
+      //   if (parameterStatus.toUpperCase() == 'YES')
+    
+      //     return this.http.get(urldata).pipe(
+      //       mergeMap(json => this.http.get(json[0]['ApiHostUrl'] + apiPath, { params }).map(this.extractData).catch(this.handleError)));
+      //   else
+      //     return this.http.get(urldata).pipe(
+      //       mergeMap(json => this.http.get(json[0]['ApiHostUrl'] + apiPath).map(this.extractData).catch(this.handleError)));
+    
+      // }
 }
 // https://localhost:44358/api/Student/GetAllBranchesDetails

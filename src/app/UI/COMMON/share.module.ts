@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { ValidationMessageComponent } from './validation-message/validation-message.component';
 // import { CommonModule } from '@angular/common';
 
@@ -11,6 +12,10 @@ import { ValidationMessageComponent } from './validation-message/validation-mess
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports:[
+    ValidationMessageComponent
+  ],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
-export class CommonModule { }
+export class ShareModule { }
