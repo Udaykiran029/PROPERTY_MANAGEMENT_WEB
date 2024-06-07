@@ -228,10 +228,10 @@ getbranchdetails(){
       GetFloorsByBlockId(pBlockId){
         debugger
         try{
-          // const params=new HttpParams().set('pBlockId',pBlockId);
-          // return this.getAPI('/GetFloorsByBlockId',params,'');
+          const params=new HttpParams().set('pBlockId',pBlockId);
+          return this._getAPI('/GetFloorsByBlockId',params,'');
           // console.log(params);
-          return this.getAPI('/GetFloorsByBlockId?pBlockId='+pBlockId,'','');
+          //return this.getAPI('/GetFloorsByBlockId?pBlockId='+pBlockId,'','');
         }
         catch(errormssg)
         {

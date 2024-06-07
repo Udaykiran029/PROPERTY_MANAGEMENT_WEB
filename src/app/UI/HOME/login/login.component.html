@@ -15,13 +15,15 @@
                               <div class="form-group">
                                   <label for="username" class="required-field">User name:</label>
                                   <input type="text" id="username" formControlName="username" class="form-control"
-                                      title="User name" minlength="3">
+                                      title="User name" minlength="3" [ngClass]="{'is-invalid':loginFormValidation?.username}">
+                                    <app-validation-message [messgae]="loginFormValidation?.username"></app-validation-message>
                                   
                               </div>
                               <div class="form-group mt-3">
                                   <label for="lname">password:</label>
                                   <input type="password" id="password" formControlName="password" class="form-control"
-                                      title="password" maxlength="6" name="value">
+                                      title="password" maxlength="6" name="value" [ngClass]="{'is-invalid':loginFormValidation?.password}">
+                                    <app-validation-message [messgae]="loginFormValidation?.password"></app-validation-message>
                                   
                               </div>
                               <div class="mt-4">
