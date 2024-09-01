@@ -23,8 +23,9 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              
               "src/styles.css",
+              "src/styles.scss",
               "node_modules/toastr/build/toastr.min.css"],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
@@ -94,6 +95,7 @@
             ],
             "styles": [
               "src/styles.css",
+              "src/styles.scss",
               "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"
             ],
             "scripts": []

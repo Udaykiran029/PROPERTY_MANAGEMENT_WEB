@@ -21,8 +21,8 @@ export class BlockBuildingCreationComponent implements OnInit {
   }
   FormDetails(){
     this.BlockCreation=this.fb.group({
-      pblockname:['',Validators.required],
-      pNoofFloors:['',Validators.required],
+      pblockname:['nethri',Validators.required],
+      pNoofFloors:['10',Validators.required],
       pis_vacancy:[false],
       pNoofRooms:[0],
       pstatusid:[true],
@@ -38,22 +38,32 @@ export class BlockBuildingCreationComponent implements OnInit {
       pblock_id: [0],
       pNoofRooms: [null],
       pisvacancy: [true],
-      statusid:[true]
+      statusid:[true],
+      floorno:['']
     })
   }
   add(){
     debugger
     if(this.checkValidations(this.BlockCreation,true)){
-      this.commonservice.showsuccessmsg('Done');
-      let countoffloors=this.BlockCreation.get('pNoofFloors').value;
-      if (this.lstroomsforfloors.length>parseInt(countoffloors)){
+      // this.commonservice.showsuccessmsg('Done');
+      // let countoffloors=this.BlockCreation.get('pNoofFloors').value;
+      // if (this.lstroomsforfloors.length>parseInt(countoffloors)){
+      // const controlNames=<FormGroup>this.BlockCreation['controls']['floors']
+      // // controlNames.controls['pNoofRooms'].setValue(this.BlockCreation.controls['pNoofRooms'].value)
+      // controlNames['controls']['pNoofRooms'].setValue(this.BlockCreation.controls['pNoofRooms'].value);
+      // this.lstroomsforfloors.push(controlNames.value);
+      // }else{
+      //   this.commonservice.showErrorMessage('Exceeded');
+      // }
+      let values=this.BlockCreation.controls.pNoofFloors.value;
       const controlNames=<FormGroup>this.BlockCreation['controls']['floors']
-      // controlNames.controls['pNoofRooms'].setValue(this.BlockCreation.controls['pNoofRooms'].value)
-      controlNames['controls']['pNoofRooms'].setValue(this.BlockCreation.controls['pNoofRooms'].value);
-      this.lstroomsforfloors.push(controlNames.value);
-      }else{
-        this.commonservice.showErrorMessage('Exceeded');
+      for (let k=0;k<values;k++){
+        controlNames['controls']['floorno'].setValue(k+1);
+        controlNames['controls']['pfloorname'].setValue(k+1+' Floor');
+        controlNames['controls']['pNoofRooms'].setValue(k+1*10);
+        this.lstroomsforfloors.push(controlNames.value);
       }
+      console.log(this.lstroomsforfloors);
     }
   }
   SaveBlockandFloors(){
@@ -62,12 +72,13 @@ export class BlockBuildingCreationComponent implements OnInit {
     // controlNames.controls['pNoofRooms'].setValue(this.BlockCreation.controls['pNoofRooms'].value)
     // controlNames.controls.push(this.BlockCreation.controls.flooors)
     //controlNames.push(this.BlockCreation['controls']['floors']['controls']);
-    this.addFloorToBlock(this.BlockCreation);
     for (let k =0; k<this.lstroomsforfloors.length;k++){
+      this.addFloorToBlock(this.BlockCreation);
       // controlNames['controls']['pNoofRooms'][k].push(this.lstroomsforfloors[k].pNoofRooms);
       // controlNames.push(this.BlockCreation['controls']['floors']);
       // controlNames[k]['controls']['pNoofRooms'].setValue(this.lstroomsforfloors[k].pNoofRooms);
       controlNames['controls'][k]['controls']['pNoofRooms'].setValue(this.lstroomsforfloors[k].pNoofRooms)
+      console.log(this.BlockCreation.value)
     }
     let data=JSON.stringify(this.BlockCreation.value);
     for (let u=0;u<this.lstroomsforfloors.length;u++){//controlNames
@@ -99,7 +110,7 @@ export class BlockBuildingCreationComponent implements OnInit {
   }
   GetValidationByControl(formGroup: FormGroup, key: string, isValid: boolean): boolean {
     try {
-      debugger
+      //debugger
       let formcontrol;
       formcontrol = formGroup.get(key);
       if (formcontrol) {
@@ -156,5 +167,9 @@ export class BlockBuildingCreationComponent implements OnInit {
     catch (e) {
       return false;
     }
+  }
+  updaterooms($event){
+    debugger
+    console.log($event)
   }
 }

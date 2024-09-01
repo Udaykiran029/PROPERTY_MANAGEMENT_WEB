@@ -1,17 +1,19 @@
 <header class="top-fixed">
-    <div class="row">
+    <div class="top-nav-bar">
         <!-- <li class="nav-item"><button (click)="openNav()"></button></li> -->
-        <ul class="nav" *ngFor="let module of menudata.moduleDTOList">
-            <!-- <li style="width: 10%;justify-content: center;" (click)="openNav()">open</li> -->
-        <li class="nav-item"><a id="{{module.pmoduleid}}" routerLink="{{module.pmodulenamehtml}}" (click)="openforms(module.pmoduleid)">{{module.pmodulename}}</a></li>
-            <!-- <li class="nav-item"><a id="2" routerLink="chit">CHIT</a></li>
-            <li class="nav-item"><a id="3" routerLink="loans">LOANS</a></li>
-            <li class="nav-item"><a id="4" routerLink="transactions">TRANSACTIONS</a></li>
-            <li class="nav-item"><a id="5" routerLink="reports">REPORTS</a></li> -->
-            <!-- <li style="width: 35%;"></li>
-            <li class="nav-item">notification<span class="badge badge-light">9</span></li>
-            <li class="nav-item"><a href="/">logout</a></li> -->
-        </ul>
+         <!-- <div class="top-nav-bar"> -->
+            <ul class="nav" *ngFor="let module of menudata.moduleDTOList">
+                <!-- <li style="width: 10%;justify-content: center;" (click)="openNav()">open</li> -->
+            <li class="nav-item"><a id="{{module.pmoduleid}}" routerLink="{{module.pmodulenamehtml}}" (click)="openforms(module.pmoduleid)">{{module.pmodulename}}</a></li>
+                <!-- <li class="nav-item"><a id="2" routerLink="chit">CHIT</a></li>
+                <li class="nav-item"><a id="3" routerLink="loans">LOANS</a></li>
+                <li class="nav-item"><a id="4" routerLink="transactions">TRANSACTIONS</a></li>
+                <li class="nav-item"><a id="5" routerLink="reports">REPORTS</a></li> -->
+                <!-- <li style="width: 35%;"></li>
+                <li class="nav-item">notification<span class="badge badge-light">9</span></li>
+                <li class="nav-item"><a href="/">logout</a></li> -->
+            </ul>
+        <!-- </div> -->
     </div>
 </header>
 <aside>

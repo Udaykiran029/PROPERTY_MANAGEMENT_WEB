@@ -229,7 +229,7 @@ getbranchdetails(){
         debugger
         try{
           const params=new HttpParams().set('pBlockId',pBlockId);
-          return this._getAPI('/GetFloorsByBlockId',params,'');
+          return this._getAPI('/GetFloorsByBlockId',params,'YES');
           // console.log(params);
           //return this.getAPI('/GetFloorsByBlockId?pBlockId='+pBlockId,'','');
         }

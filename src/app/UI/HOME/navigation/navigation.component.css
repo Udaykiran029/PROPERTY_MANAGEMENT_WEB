@@ -1,12 +1,16 @@
 .top-fixed {
-    position: -webkit-sticky;
+    /* position: -webkit-sticky; */
+    display: flex;
+    position: fixed;
+    width: 100%;
 }
 
 
 /*header styles start*/
 header {
     grid-area: head;
-    background-color: rgb(24, 9, 45);
+    /* background-color: rgb(24, 9, 45); */
+    background-color: rgb(0, 0, 0);
     height: 36px;
     cursor: pointer;
 }
@@ -32,7 +36,8 @@ a {
 
 .sidenav {
     height: 100%;
-    width: 200px;
+    width: 250px;
+    /* width: 200px; */
     position: fixed;
     z-index: 1;
     top: 36px;
@@ -46,7 +51,8 @@ a {
   .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 25px;
+    /* font-size: 25px; */
+    font-size: 18px;
     color: #818181;
     display: block;
     transition: 0.3s;
@@ -65,34 +71,68 @@ a {
   }
   
   @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    /* .sidenav {padding-top: 15px;} */
+    /* .sidenav a {font-size: 18px;} */
   }
   #mySidenav{
     background: #c9c9c9;
   }
   ul>li{
     padding: 2px;
-    width:20px
+    /* width:20px; */
   }
   ul{
     width: 85px;
-    padding: revert;
+    /*padding: revert;*/
   }
   /* .main-content{
     margin-left: 14rem;
   } */
+  main{
+    display: table;
+  }
   .forms-menu{
     font-size: medium;
   }
-  .nav-item>a:hover{
-    background: aliceblue;
+  .nav-item:hover{
+    /* background: aliceblue; */
+    background: #333334;
     color: black;
+    width:auto;
   }
+  .nav-item{
+    width:auto;
+    }
+    .top-nav-bar>nav{
+      display: flex;
+      justify-content: space-between;
+    }
   .forms-menu>ul>li>a:hover{
-    background: azure;
+    /* background: azure; */
     color: black;
   }
   .side-nav-item{
     
+  }
+  .top-nav-bar{
+    display: inline-flex;
+    margin-left: 20px;
+  }
+  .nav{
+    width: 100px;
+    /*display: inline-flex;
+    justify-content: center;*/
+    cursor: pointer;
+  }
+  .nav>li{
+    width: 100px !important;
+  }
+  .nav>.nav-item{
+    justify-content: center;
+  }
+  .inner-forms-menu{
+    /* width: 100px !important; */
+    width: auto;
+    height: 50px !important;
+    padding: 6px;
   }

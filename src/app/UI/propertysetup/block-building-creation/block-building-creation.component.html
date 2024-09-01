@@ -1,8 +1,8 @@
 <form [formGroup]="BlockCreation">
     <div class="section-content">
+        <h3>Block Creation</h3>
         <div class="row">
-            <h3>Block Creation</h3>
-            <div class="col-md-4 col-xl-4">
+            <div class="col-md-3 col-xl-3">
                 <div class="form-group">
                     <label>blockname</label>
                     <input type="text" class="form-control" formControlName="pblockname" id="pblockname" title="Block" maxlength="100"
@@ -10,7 +10,7 @@
                     <app-validation-message [messgae]="BlockCreationValidation?.pblockname"></app-validation-message>
                 </div>
             </div>
-            <div class="col-md-4 col-xl-4">
+            <div class="col-md-3 col-xl-3">
                 <div class="form-group">
                     <label>Floors</label>
                     <input type="text" class="form-control" formControlName="pNoofFloors" id="pNoofFloors" title="Floors" maxlength="100"
@@ -18,30 +18,45 @@
                     <app-validation-message [messgae]="BlockCreationValidation?.pNoofFloors"></app-validation-message>
                 </div>
             </div>
-            <div class="row">
-            <div class="col-md-4 col-xl-4">
+            <div class="col-md-3 col-xl-3">
                 <div class="form-group">
                     <label>Rooms</label>
                     <input type="text" class="form-control" formControlName="pNoofRooms" id="pNoofRooms" title="Rooms" maxlength="100">
                 </div>
             </div>
-            <div class="col-md-4 col-xl-4">
+            <div class="col-md-3 col-xl-3 mt-4">
                 <button (click)="add()" class="btn-button">Add</button>
             </div>
         </div>
-        <div class="col-md-4 col-xl-4">
-            <button (click)="SaveBlockandFloors()" class="btn-button">Save</button>
-        </div>
+        <div class="row" *ngIf="lstroomsforfloors.length>0">
+            <div class="col-md-12 col-xl-12">
+                <ngx-datatable [rows]="this.lstroomsforfloors" class="ngx-border">
+                    <ngx-datatable-column name="Floors" prop="floorno"></ngx-datatable-column>
+                    <!-- <ngx-datatable-column name="Floors id" prop="pfloorid"></ngx-datatable-column> -->
+                    <ngx-datatable-column name="Floor Name" prop="pfloorname"></ngx-datatable-column>
+                    <!-- <ngx-datatable-column name="Block id" prop="pblock_id"></ngx-datatable-column> -->
+                    <ngx-datatable-column name="No of Rooms" prop="pNoofRooms">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                            <div>
+                                <input type="text" id="noofrooms" class="form-control" [value]="row.pNoofRooms" (change)="updaterooms($event)">
+                            </div>
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="Vacancy" prop="pisvacancy">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                            <div *ngIf="row.pisvacancy">Available</div>
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <!-- <ngx-datatable-column name="Status" prop="statusid"></ngx-datatable-column> -->
+                </ngx-datatable>
+            </div>
         </div>
         <div class="row">
-            <ngx-datatable [rows]="">
-                <ngx-datatable-column name="Floor no" prop="pfloorid"></ngx-datatable-column>
-                <ngx-datatable-column name="Floor Name" prop="pfloorname"></ngx-datatable-column>
-                <ngx-datatable-column name="Block id" prop="pblock_id"></ngx-datatable-column>
-                <ngx-datatable-column name="No of Rooms" prop="pNoofRooms"></ngx-datatable-column>
-                <ngx-datatable-column name="Vacancy" prop="pisvacancy"></ngx-datatable-column>
-                <ngx-datatable-column name="Status" prop="statusid"></ngx-datatable-column>
-            </ngx-datatable>
+            <div class="col-md-12 col-xl-12">
+            <div class="d-flex justify-content-end">
+                <button (click)="SaveBlockandFloors()" class="btn-button">Save</button>
+            </div>
+        </div>
         </div>
     </div>
 </form>
