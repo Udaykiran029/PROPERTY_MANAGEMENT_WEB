@@ -108,4 +108,5 @@ export class NavigationComponent implements OnInit {
     this.formcomponents=this.menudata.moduleDTOList[$event].pFormsDTO;
     console.log('Forms',this.formcomponents);
   }
+  //test
 }
