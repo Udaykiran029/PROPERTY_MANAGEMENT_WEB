@@ -1,7 +1,7 @@
 .top-fixed {
     /* position: -webkit-sticky; */
     display: flex;
-    position: fixed;
+    /* position: fixed; *//*01092024--*/
     width: 100%;
 }
 
@@ -136,3 +136,9 @@ a {
     height: 50px !important;
     padding: 6px;
   }
+/* .top-nav-bar:nth-child(){
+
+} */
+ .nav:nth-last-child(1){
+  margin-left: 200%;
+ }
