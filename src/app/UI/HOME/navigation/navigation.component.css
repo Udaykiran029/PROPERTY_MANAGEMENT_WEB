@@ -142,3 +142,9 @@ a {
  .nav:nth-last-child(1){
   margin-left: 200%;
  }
+ .active{
+  /* color:blue; */
+  background: #333334;
+    color: black;
+    width:auto;
+}
